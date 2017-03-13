@@ -22,7 +22,7 @@ module Pod
         "PROJECT_OWNER" => @configurator.user_name,
         "TODAYS_DATE" => @configurator.date,
         "TODAYS_YEAR" => @configurator.year,
-        "PROJECT" => @configurator.pod_name + "_Example",
+        "PROJECT" => @configurator.pod_name,
         "CPD" => @prefix
       }
       replace_internal_project_settings
@@ -110,7 +110,7 @@ RUBY
           before = project_folder + "/PROJECT_Example/" + file
           next unless File.exists? before
 
-          after = project_folder + "/PROJECT_Example/" + file.gsub("PROJECT", @configurator.pod_name)
+          after = project_folder + "/PROJECT_Example/" + file.gsub("PROJECT", @configurator.pod_name + "_Example")
           File.rename before, after
         end
       end
