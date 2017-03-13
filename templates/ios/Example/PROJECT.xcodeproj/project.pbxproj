@@ -85,6 +85,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				B83E0CA71E76DDD5004782EE /* PROJECT */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for PROJECT */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -164,6 +165,13 @@
 			children = (
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		B83E0CA71E76DDD5004782EE /* PROJECT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PROJECT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

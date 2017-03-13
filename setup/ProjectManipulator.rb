@@ -43,6 +43,11 @@ module Pod
       project_metadata_item.new_file "../LICENSE"
     end
 
+    def add_podspec_file
+        project_pod_item = @project.root_object.main_group.children.select { |group| group.name == @configurator.pod_name }.first
+        project_pod_item.new_file "../" + @configurator.pod_name  + "/Classes/ReplaceMe.m"
+    end
+
     def remove_demo_project
       app_project = @project.native_targets.find { |target| target.product_type == "com.apple.product-type.application" }
       test_target = @project.native_targets.find { |target| target.product_type == "com.apple.product-type.bundle.unit-test" }
