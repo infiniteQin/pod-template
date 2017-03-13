@@ -75,7 +75,7 @@ module Pod
       podfile_text = <<-RUBY
 use_frameworks!
 target '#{test_target.name}' do
-  pod '#{@configurator.pod_name}', :path => '../'
+    #pod '#{@configurator.pod_name}', :path => '../'
   
   ${INCLUDED_PODS}
 end
@@ -119,7 +119,8 @@ RUBY
 
     def rename_project_folder
       if Dir.exist? project_folder + "/PROJECT"
-        File.rename(project_folder + "/PROJECT", project_folder + "/" + @configurator.pod_name)
+          puts "========" + project_folder + "/PROJECT"
+        File.rename(project_folder + "/PROJECT", project_folder + "/" + @configurator.pod_name + "-Example")
       end
     end
 
