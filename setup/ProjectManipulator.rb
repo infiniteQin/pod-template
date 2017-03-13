@@ -22,7 +22,7 @@ module Pod
         "PROJECT_OWNER" => @configurator.user_name,
         "TODAYS_DATE" => @configurator.date,
         "TODAYS_YEAR" => @configurator.year,
-        "PROJECT" => @configurator.pod_name,
+        "PROJECT" => @configurator.pod_name + "_Example",
         "CPD" => @prefix
       }
       replace_internal_project_settings
@@ -119,7 +119,7 @@ RUBY
 
     def rename_project_folder
       if Dir.exist? project_folder + "/PROJECT_Example"
-          File.rename(project_folder + "/PROJECT_Example", project_folder + "/" + @configurator.pod_name + "_Example")
+          File.rename(project_folder + "/PROJECT_Example", project_folder + "/" + @configurator.pod_name)
       end
     end
 
