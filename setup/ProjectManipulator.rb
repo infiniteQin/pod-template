@@ -98,19 +98,19 @@ RUBY
       unless @remove_demo_target
         # change app file prefixes
         ["CPDAppDelegate.h", "CPDAppDelegate.m", "CPDViewController.h", "CPDViewController.m"].each do |file|
-          before = project_folder + "/PROJECT/" + file
+          before = project_folder + "/PROJECT_Example/" + file
           next unless File.exists? before
 
-          after = project_folder + "/PROJECT/" + file.gsub("CPD", prefix)
+          after = project_folder + "/PROJECT_Example/" + file.gsub("CPD", prefix)
           File.rename before, after
         end
 
         # rename project related files
         ["PROJECT-Info.plist", "PROJECT-Prefix.pch"].each do |file|
-          before = project_folder + "/PROJECT/" + file
+          before = project_folder + "/PROJECT_Example/" + file
           next unless File.exists? before
 
-          after = project_folder + "/PROJECT/" + file.gsub("PROJECT", @configurator.pod_name)
+          after = project_folder + "/PROJECT_Example/" + file.gsub("PROJECT", @configurator.pod_name)
           File.rename before, after
         end
       end
@@ -118,9 +118,8 @@ RUBY
     end
 
     def rename_project_folder
-      if Dir.exist? project_folder + "/PROJECT"
-          puts "========" + project_folder + "/PROJECT"
-        File.rename(project_folder + "/PROJECT", project_folder + "/" + @configurator.pod_name + "-Example")
+      if Dir.exist? project_folder + "/PROJECT_Example"
+          File.rename(project_folder + "/PROJECT_Example", project_folder + "/" + @configurator.pod_name + "_Example")
       end
     end
 
