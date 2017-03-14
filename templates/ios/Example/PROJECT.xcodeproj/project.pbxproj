@@ -172,6 +172,7 @@
 			children = (
 			);
 			name = PROJECT;
+			path = ../PROJECT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
