@@ -29,6 +29,7 @@ module Pod
 
       @project = Xcodeproj::Project.open(@xcodeproj_path)
       add_podspec_metadata
+      add_podspec_file
       remove_demo_project if @remove_demo_target
       @project.save
 
@@ -45,7 +46,7 @@ module Pod
 
     def add_podspec_file
         project_pod_item = @project.root_object.main_group.children.select { |group| group.name == @configurator.pod_name }.first
-        project_pod_item.new_file "../" + @configurator.pod_name  + "/Classes/ReplaceMe.m"
+        project_pod_item.new_file "../" + @configurator.pod_name  + "/ReplaceMe.m"
     end
 
     def remove_demo_project
